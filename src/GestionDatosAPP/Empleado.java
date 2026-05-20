@@ -2,11 +2,13 @@ package GestionDatosAPP;
 
 public abstract class Empleado extends Persona {
     private double sueldo;
-    private Directivo jefe=null;
-    private Empresa empresa=null;
-    public Empleado(String nombre, int edad) {
-        super(nombre, edad);
+    private Directivo jefe;
+    private Empresa empresa;
+    public Empleado(String nombre, int edad, String idPersona) {
+        super(nombre, edad, idPersona);
         this.sueldo=0;
+        this.jefe=null;
+        this.empresa=null;
     }
     public abstract double calcularSueldo();
 
@@ -40,7 +42,15 @@ public abstract class Empleado extends Persona {
     // toString para mostar los datos de un empleado cualquiera, sera usado en la clase empresa
     @Override
     public String toString() {
+        String jefe;
+        if (this.getJefe() != null) {
+            jefe = this.getJefe().getNombre();
+        } else {
+            jefe="El empleado no tiene un jefe asignado";
+        }
         return super.toString() +
-                "\n- Sueldo Calculado: $" + this.getSueldo();
+                "\n- Sueldo Calculado: $" + this.getSueldo()+
+                "\n- Jefe Asignado: " + jefe+
+                "\n- Empresa Asignada: " + this.getEmpresa().getNombre();
     }
 }

@@ -4,8 +4,8 @@ public class EmpleadoHora extends Empleado{
     private double horasTrabajadas;
     private double valorHora;
 
-    public EmpleadoHora(String nombre, int edad, double horasTrabajadas, double valorHora) {
-        super(nombre, edad);
+    public EmpleadoHora(String nombre, int edad, double horasTrabajadas, double valorHora, String idPersona) {
+        super(nombre, edad,  idPersona);
         this.horasTrabajadas = horasTrabajadas;
         this.valorHora = valorHora;
     }

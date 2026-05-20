@@ -5,8 +5,8 @@ public class EmpleadoComision extends Empleado{
     private double comision;
     private double netoVentas;
 
-    public EmpleadoComision(String nombre, int edad, double sueldoMinimo, double comision, double netoVentas){
-        super(nombre, edad);
+    public EmpleadoComision(String nombre, int edad, double sueldoMinimo, double comision, double netoVentas, String idPersona) {
+        super(nombre, edad,  idPersona);
         this.sueldoMinimo = sueldoMinimo;
         this.comision = comision;
         this.netoVentas = netoVentas;

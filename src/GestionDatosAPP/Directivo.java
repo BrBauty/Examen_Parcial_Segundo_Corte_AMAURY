@@ -12,8 +12,8 @@ public class Directivo extends Empleado{
      Esto es basicamente una lista de empleados en Directivo*/
     private List<Empleado> subordinados;
 
-    public Directivo(String nombre, int edad, int categoria) {
-        super(nombre, edad);
+    public Directivo(String nombre, int edad, int categoria, String idPersona) {
+        super(nombre, edad,  idPersona);
         this.categoria = categoria;
         this.subordinados = new ArrayList<>(); //se inicaliza la lista vacia, para añadir empleados despues
     }
@@ -55,7 +55,7 @@ public class Directivo extends Empleado{
             }
         }
     }
-    //toSring para Directivo el cual sera usado en la clase empresa
+    //toSring para Directivo el cual será usado en la clase empresa
     @Override
     public String toString() {
         return "=== DIRECTIVO ===\n" +

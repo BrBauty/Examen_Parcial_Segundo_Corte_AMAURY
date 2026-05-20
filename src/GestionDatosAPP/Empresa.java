@@ -8,9 +8,11 @@ public class Empresa {
     composicion de Empresa con empleado y Agregacion de clientes con empresa*/
     private List<Empleado> empleados;
     private List<Cliente> clientes;
+    private String idEmpresa;
 
-    public Empresa(String nombre) {
+    public Empresa(String nombre, String idEmpresa) {
         this.nombre = nombre;
+        this.idEmpresa = idEmpresa;
         //Se inicalizan las listas para poder recibir datos
         this.empleados = new ArrayList<>();
         this.clientes = new ArrayList<>();
@@ -27,15 +29,15 @@ public class Empresa {
 
     //getters
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
     public List<Empleado> getEmpleados() {
-        return empleados;
+        return this.empleados;
     }
     public List<Cliente> getClientes() {
-        return clientes;
+        return this.clientes;
     }
-
+    public String getIdEmpresa() {return this.idEmpresa;}
     //metodo de mostrar clientes del Punto C
     public void mostrarClientesEmpresa() {
         if (this.clientes==null || this.clientes.isEmpty()) {
